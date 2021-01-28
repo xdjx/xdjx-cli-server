@@ -1,11 +1,11 @@
 'use strict';
 
-const Mongo = require('@pick-star/cli-mongodb');
-
-const { mongodbUrl } = require('../../config/db');
+const tcb = require('@cloudbase/node-sdk');
 
 function mongo() {
-  return new Mongo(mongodbUrl);
+  const app = tcb.init({});
+
+  return app.database();
 }
 
 module.exports = mongo;
